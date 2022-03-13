@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<!-- Edge 模式通知 Windows Internet Explorer 以最高级别的可用模式显示内容 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	
+	<title>YK-KeyGen</title>
+	
+	<link href="dev-css/index.css" rel="stylesheet">
+	
+</head>
+<body>
+	<!-- resources/static/index.html为web项目welcome-file -->
+	<!-- 两种方式访问该页面 -->
+	<!-- 1、http://localhost:8081 -->
+	<!-- 2、http://localhost:8081/index.html -->
+		
+	<!-- form表单数据通过submit提交到controller示例,action -->
+	<form id="slick-login" class="animated bounce"><!-- action="login" method="post" -->
+	  <label for="seed">加密种子</label>
+	  <!-- <input type="password" name="password" placeholder="密码"> -->
+	  <input type="text" name="seed" placeholder="加密种子" onfocus="this.type='password'" autocomplete="off">
+	  <label for="src_string">源字符串</label>
+	  <input type="text" name="src_string" placeholder="源字符串" autofocus required>
+	  <label for="en_string">加密字符串</label>
+	  <input type="text" name="en_string" placeholder="加密字符串" autofocus required>
+	  <label for="de_string">解密字符串</label>
+	  <input type="text" name="de_string" placeholder="解密字符串" autofocus required>
+
+	  <input type="button" value="加密" onclick="enCryptStr()">
+	  <input type="button" value="解密" onclick="deCryptStr()">
+	</form>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery/jquery-3.2.1.min.js"></script>
+
+	<script src="dev-js/index.js"></script>	
+	
+</body>
+</html>

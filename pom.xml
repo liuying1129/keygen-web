@@ -11,25 +11,34 @@
 	<groupId>com.yklis</groupId>
 	<artifactId>keygen-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>keygen-web</name>
-	<description>Demo project for Spring Boot</description>
-	<properties>
-		<java.version>11</java.version>
-	</properties>
+
 	<dependencies>
 		<dependency>
+			<!-- 自带logback依赖(spring-boot-starter-logging),logback实现了SLF4J -->
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
 		<dependency>
+			<!-- spring-boot-starter-web依赖spring-boot-starter-tomcat -->
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<!-- 本地仓库工具库 -->
+        <dependency>
+            <groupId>com.yklis</groupId>
+            <artifactId>LYFunction</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>		
+        
 	</dependencies>
 
 	<build>
+		<!-- 如果不定义finalName，则生成的包名是artifactId-version.war -->
+	    <!-- 定义finalName，则生成的包名是finalName.war -->
+	    <finalName>keygen-web</finalName>
+	    
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
