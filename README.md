@@ -3,6 +3,7 @@
 前后端分离架构
 
 前端文件夹keygen-frontend，其实开发期该文件夹放在哪里都可以 
+
 前端部署步骤
 1、安装nginx
 2、将supplies-manage-frontend复制到nginx的html目录中
