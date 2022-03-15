@@ -9,7 +9,10 @@
 	
 	<title>YK-KeyGen</title>
 	
-	<link href="dev-css/index.css" rel="stylesheet">
+    <!-- 网页图标 -->
+    <link rel="icon" href="images/favicon.ico" />
+
+  	<link href="dev-css/index.css" rel="stylesheet">
 	
 </head>
 <body>
@@ -28,7 +31,7 @@
 	  <label for="en_string">加密字符串</label>
 	  <input type="text" name="en_string" placeholder="加密字符串" autofocus required>
 	  <label for="de_string">解密字符串</label>
-	  <input type="text" name="de_string" placeholder="解密字符串" autofocus required>
+	  <input type="text" name="de_string" placeholder="解密字符串" disabled="disabled" autofocus required>
 
 	  <input type="button" value="加密" onclick="enCryptStr()">
 	  <input type="button" value="解密" onclick="deCryptStr()">
