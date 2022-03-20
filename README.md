@@ -82,5 +82,9 @@ docker rmi 镜像名
 
 11、在运行的容器中执行命令（进入运行中的容器） 
 
-docker exec -it keygen-web-container /bin/bash
+docker exec -it keygen-web-container /bin/bash 
+
+12、对于未成功运行的容器，要查看文件，则需要将容器中的文件复制出来 
+
+docker cp 容器名:/ 目标路径
 
