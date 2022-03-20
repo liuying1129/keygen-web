@@ -20,7 +20,7 @@
 
 FROM nginx 
 
-COPY keygen-frontend /usr/share/nginx/html/ 
+COPY keygen-frontend /usr/share/nginx/html/keygen-frontend  
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf 
 
