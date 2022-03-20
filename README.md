@@ -17,3 +17,52 @@
 4、启动nginx服务 
 
 5、访问http://localhost:8086 
+
+用Docker部署springboot项目 
+
+1、创建Dockerfile文件，内容如下 
+
+FROM java:8 
+
+VOLUME /tmp 
+
+ADD keygen-web.jar /keygen-web-docker.jar 
+
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/keygen-web-docker.jar"] 
+
+2、创建镜像image 
+docker build -t keygen-web-image . 
+
+3、查看镜像 
+
+docker images 
+
+4、运行镜像（获得容器） 
+
+docker run -d -p 8088:8085 --name keygen-web-container keygen-web-image 
+
+5、查看运行中的container 
+
+docker ps 
+
+6、查看所有container 
+
+docker ps -a
+
+7、停止container 
+
+docker stop 容器名
+
+8、删除container 
+
+docker rm 容器名 
+
+8、删除image 
+
+docker rmi 镜像名 
+ 
+
+
+
+
+
