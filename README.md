@@ -16,6 +16,10 @@
 
 ## 前端部署步骤（Docker方法） 
 
+1、容器下nginx的配置文件 
+
+/etc/nginx/conf.d/default.conf只能有server段
+
 1、创建Dockerfile文件，内容如下 
 
 FROM nginx 
@@ -32,7 +36,7 @@ docker build -t keygen-frontend-image .
 
 3、运行镜像（获得容器） 
 
-docker run -d -p 80:80 --restart=always --privileged=true --name keygen-frontend-container keygen-frontend-image 
+docker run -d -p 80:80 --restart=always --name keygen-frontend-container keygen-frontend-image 
 
 ## 后端部署（用Docker部署springboot项目） 
 
@@ -86,5 +90,9 @@ docker exec -it keygen-web-container /bin/bash
 
 12、对于未成功运行的容器，要查看文件，则需要将容器中的文件复制出来 
 
-docker cp 容器名:/ 目标路径
+docker cp 容器名:/ 目标路径 
+
+13、查看容器运行日志 
+
+docker logs 容器名 
 
