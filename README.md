@@ -24,13 +24,11 @@
 
 FROM java:8 
 
-VOLUME /tmp 
+ADD keygen-web.jar keygen-web.jar 
 
-ADD keygen-web.jar /keygen-web-docker.jar 
+ENTRYPOINT ["java","-jar","keygen-web.jar"] 
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/keygen-web-docker.jar"] 
-
-2、创建镜像image 
+2、构建镜像image 
 docker build -t keygen-web-image . 
 
 3、查看镜像 
@@ -39,7 +37,7 @@ docker images
 
 4、运行镜像（获得容器） 
 
-docker run -d -p 8088:8085 --name keygen-web-container keygen-web-image 
+docker run -d -p 8085:8085 --name keygen-web-container keygen-web-image 
 
 5、查看运行中的container 
 
@@ -62,7 +60,7 @@ docker rm 容器名
 docker rmi 镜像名 
  
 
-
+ 
 
 
 
