@@ -32,7 +32,7 @@ docker build -t keygen-frontend-image .
 
 3、运行镜像（获得容器） 
 
-docker run -d -p 80:80 --restart=always --name keygen-frontend-container keygen-frontend-image 
+docker run -d -p 80:80 --restart=always --privileged=true --name keygen-frontend-container keygen-frontend-image 
 
 ## 后端部署（用Docker部署springboot项目） 
 
