@@ -6,13 +6,33 @@
 
 1、安装nginx 
 
-2、将supplies-manage-frontend复制到/opt。实际上复制到哪里都可以，nginx.conf中配置该路径即可 
+2、将keygen-frontend复制到/opt。实际上复制到哪里都可以，nginx.conf中配置该路径即可 
 
 3、配置nginx.conf（将nginx.conf复制到nginx的conf目录中） 
 
 4、启动nginx服务 
 
 5、访问http://IP:PORT。因为nginx中端口设置为80，故可省略端口，访问http://IP即可 
+
+## 前端部署步骤（Docker方法） 
+
+1、创建Dockerfile文件，内容如下 
+
+FROM nginx 
+
+COPY keygen-frontend /usr/share/nginx/html/ 
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf 
+
+2、构建镜像image 
+
+#最后的点(.)表示基于当前目录的Dockerfile构建镜像
+
+docker build -t keygen-frontend-image . 
+
+3、运行镜像（获得容器） 
+
+docker run -d -p 80:80 --restart=always --name keygen-frontend-container keygen-frontend-image 
 
 ## 后端部署（用Docker部署springboot项目） 
 
@@ -25,8 +45,6 @@ ADD keygen-web.jar keygen-web.jar
 ENTRYPOINT ["java","-jar","keygen-web.jar"] 
 
 2、构建镜像image 
-
-#最后的点(.)表示基于当前目录的Dockerfile构建镜像
 
 docker build -t keygen-web-image . 
 
