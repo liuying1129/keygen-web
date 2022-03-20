@@ -26,6 +26,8 @@ ENTRYPOINT ["java","-jar","keygen-web.jar"]
 
 2、构建镜像image 
 
+#最后的点(.)表示基于当前目录的Dockerfile构建镜像
+
 docker build -t keygen-web-image . 
 
 3、查看镜像 
