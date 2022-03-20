@@ -37,7 +37,7 @@ docker images
 
 4、运行镜像（获得容器） 
 
-docker run -d -p 8085:8085 --name keygen-web-container keygen-web-image 
+docker run -d -p 8085:8085 --restart=always --name keygen-web-container keygen-web-image 
 
 5、查看运行中的container 
 
@@ -58,9 +58,4 @@ docker rm 容器名
 8、删除image 
 
 docker rmi 镜像名 
- 
-
- 
-
-
 
