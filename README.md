@@ -2,7 +2,7 @@
 
 前端文件夹keygen-frontend，开发期该文件夹放在哪里都可以。就算前端文件夹放在后端文件夹中，后端打包时也不会将前端打包进去。
 
-前端部署步骤 
+## 前端部署步骤（非Docker方法） 
 
 1、安装nginx 
 
@@ -16,7 +16,7 @@
 
 5、访问http://localhost:8086 
 
-用Docker部署springboot项目 
+## 后端部署（用Docker部署springboot项目） 
 
 1、创建Dockerfile文件，内容如下 
 
