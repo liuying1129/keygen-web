@@ -59,3 +59,7 @@ docker rm 容器名
 
 docker rmi 镜像名 
 
+9、在运行的容器中执行命令 
+
+docker exec -it keygen-web-container /bin/bash
+
