@@ -6,15 +6,13 @@
 
 1、安装nginx 
 
-2、将supplies-manage-frontend复制到nginx的html目录中 
+2、将supplies-manage-frontend复制到/opt。实际上复制到哪里都可以，nginx.conf中配置该路径即可 
 
 3、配置nginx.conf（将nginx.conf复制到nginx的conf目录中） 
 
-4、将【nginx配置为Windows服务】中文件复制到nginx.exe目录 
-
 4、启动nginx服务 
 
-5、访问http://localhost:8086 
+5、访问http://IP:PORT。因为nginx中端口设置为80，故可省略端口，访问http://IP即可 
 
 ## 后端部署（用Docker部署springboot项目） 
 
@@ -27,6 +25,7 @@ ADD keygen-web.jar keygen-web.jar
 ENTRYPOINT ["java","-jar","keygen-web.jar"] 
 
 2、构建镜像image 
+
 docker build -t keygen-web-image . 
 
 3、查看镜像 
@@ -47,17 +46,21 @@ docker ps -a
 
 7、停止container 
 
-docker stop 容器名
+docker stop 容器名 
 
-8、删除container 
+8、运行container 
+
+docker start 容器名 
+
+9、删除container 
 
 docker rm 容器名 
 
-8、删除image 
+10、删除image 
 
 docker rmi 镜像名 
 
-9、在运行的容器中执行命令 
+11、在运行的容器中执行命令（进入运行中的容器） 
 
 docker exec -it keygen-web-container /bin/bash
 
