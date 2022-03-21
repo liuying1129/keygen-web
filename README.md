@@ -30,7 +30,7 @@ COPY default-nginx-docker.conf /etc/nginx/conf.d/default.conf
 
 #最后的点(.)表示基于当前目录的Dockerfile构建镜像
 
-docker build -t keygen-frontend-image . 
+docker build --tag liuying1129/keygen-frontend-image . 
 
 3、运行镜像（获得容器） 
 
@@ -48,7 +48,7 @@ ENTRYPOINT ["java","-jar","keygen-web.jar"]
 
 2、构建镜像image 
 
-docker build -t keygen-web-image . 
+docker build --tag liuying1129/keygen-web-image . 
 
 3、运行镜像（获得容器） 
 
