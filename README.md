@@ -24,9 +24,9 @@
 
 FROM nginx 
 
-COPY keygen-frontend /usr/share/nginx/html/keygen-frontend  
+COPY keygen-frontend /opt/keygen-frontend 
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf 
+COPY default-nginx-docker.conf /etc/nginx/conf.d/default.conf 
 
 2、构建镜像image 
 
