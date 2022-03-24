@@ -26,6 +26,10 @@ COPY keygen-frontend /opt/keygen-frontend
 
 COPY default-nginx-docker.conf /etc/nginx/conf.d/default.conf 
 
+COPY www.yklis.work_bundle.crt /etc/nginx/conf.d/www.yklis.work_bundle.crt 
+
+COPY www.yklis.work.key /etc/nginx/conf.d/www.yklis.work.key 
+
 2、构建镜像image 
 
 #最后的点(.)表示基于当前目录的Dockerfile构建镜像
