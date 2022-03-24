@@ -26,9 +26,9 @@ COPY keygen-frontend /opt/keygen-frontend
 
 COPY default-nginx-docker.conf /etc/nginx/conf.d/default.conf 
 
-COPY www.yklis.work_bundle.crt /etc/nginx/conf.d/www.yklis.work_bundle.crt 
+COPY www.yklis.work_bundle.crt /opt/www.yklis.work_bundle.crt 
 
-COPY www.yklis.work.key /etc/nginx/conf.d/www.yklis.work.key 
+COPY www.yklis.work.key /opt/www.yklis.work.key 
 
 2、构建镜像image 
 
@@ -38,7 +38,7 @@ docker build --tag liuying1129/keygen-frontend-image .
 
 3、运行镜像（获得容器） 
 
-docker run -d -p 80:80 --restart=always --name keygen-frontend-container liuying1129/keygen-frontend-image 
+docker run -d -p 80:80 -p 443:443 --restart=always --name keygen-frontend-container liuying1129/keygen-frontend-image 
 
 ## 后端部署（用Docker部署springboot项目） 
 
