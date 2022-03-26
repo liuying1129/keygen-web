@@ -82,3 +82,18 @@ body {
     -webkit-box-shadow: inset 0px 1px 0px #93a9e9;
     box-shadow: inset 0px 1px 0px #93a9e9;
 }
+
+.footer {
+    position:fixed; 
+    bottom:0;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align:center;
+}
+
+.footer a {
+    color: Gray;
+    font-size: 8px;
+    text-decoration:none;
+}
+
